@@ -12,7 +12,7 @@ namespace TrencsanszkyPatrik_Backend
             // Add services to the container.
 
             builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
-
+            builder.Services.AddDbContext<TrencsanszkyPatrik_Backend.Models.LibrarydbContext>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

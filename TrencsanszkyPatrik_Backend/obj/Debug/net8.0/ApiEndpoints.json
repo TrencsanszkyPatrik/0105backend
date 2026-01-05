@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "TrencsanszkyPatrik_Backend.Controllers.AuthorController",
+    "Method": "GetAuthorWithBooks",
+    "RelativePath": "api/Author/feladat9/{authorName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "authorName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

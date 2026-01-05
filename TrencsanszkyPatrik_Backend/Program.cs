@@ -11,6 +11,12 @@ namespace TrencsanszkyPatrik_Backend
 
             // Add services to the container.
 
+            builder.Services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options =>
+                    options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+            });
+
             builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
             builder.Services.AddDbContext<TrencsanszkyPatrik_Backend.Models.LibrarydbContext>();
 
@@ -31,6 +37,9 @@ namespace TrencsanszkyPatrik_Backend
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
+
+            
+            app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 
             app.MapControllers();

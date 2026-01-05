@@ -50,6 +50,25 @@ namespace TrencsanszkyPatrik_Backend.Controllers
             return Ok(author);
         }
 
+        [HttpGet("feladat12")]
+        public async Task<ActionResult> GetAuthorCount()
+        {
+
+            var authorCount = await dbContext.Authors.CountAsync();
+
+            if (authorCount == 0)
+            {
+                return StatusCode(400, "Unable to connect to database");
+            }
+            else
+            {
+                return Ok(new
+                {
+                    AuthorCount = $"Szerzők száma: {authorCount}"
+                });
+            }
+
+        }
 
     }
 }

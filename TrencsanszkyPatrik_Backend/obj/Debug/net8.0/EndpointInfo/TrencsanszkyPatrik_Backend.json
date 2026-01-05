@@ -27,11 +27,63 @@
         }
       }
     },
+    "/api/Author/feladat12": {
+      "get": {
+        "tags": [
+          "Author"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Books/feladat10": {
       "get": {
         "tags": [
           "Books"
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Books/feladat13": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "parameters": [
+          {
+            "name": "uid",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBookDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBookDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBookDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -52,5 +104,30 @@
       }
     }
   },
-  "components": { }
+  "components": {
+    "schemas": {
+      "CreateBookDto": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "publishDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "authorId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
 }

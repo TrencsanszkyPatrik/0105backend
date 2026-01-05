@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TrencsanszkyPatrik_Backend.Models;
+using TrencsanszkyPatrik_Backend.Models.Dtos;
 
 namespace TrencsanszkyPatrik_Backend.Controllers
 {
@@ -38,6 +39,43 @@ namespace TrencsanszkyPatrik_Backend.Controllers
             {
                 return Ok(books);   
             }
+
+        }
+
+
+        private const string UID = "FKB3F4FEA09CE43C";
+
+        [HttpPost("feladat13")]
+        public async Task<ActionResult> AddBook([FromBody] CreateBookDto newBook, [FromHeader] string uid)
+        {
+
+            if (uid != UID)
+            {
+                return Unauthorized("Nincs jogosultsága új könyv felvételéhez!");
+            }
+            var book = new Book
+            {
+                Title = newBook.Title,
+                PublishDate = newBook.PublishDate,
+                AuthorId = newBook.AuthorId,
+                CategoryId = newBook.CategoryId
+
+            };
+            dbContext.Books.Add(book);
+            await dbContext.SaveChangesAsync();
+            return Ok(new
+            {
+                Message = "Könyv sikeresen hozzáadva!",
+                Book = new
+                {
+                    book.BookId,
+                    book.Title,
+                    book.PublishDate,
+                    book.AuthorId,
+                    book.CategoryId
+                }
+            });
+
 
         }
 

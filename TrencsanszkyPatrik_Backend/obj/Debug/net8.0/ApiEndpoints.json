@@ -1,6 +1,16 @@
 [
   {
     "ContainingType": "TrencsanszkyPatrik_Backend.Controllers.AuthorController",
+    "Method": "GetAuthorCount",
+    "RelativePath": "api/Author/feladat12",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TrencsanszkyPatrik_Backend.Controllers.AuthorController",
     "Method": "GetAuthorWithBooks",
     "RelativePath": "api/Author/feladat9/{authorName}",
     "HttpMethod": "GET",
@@ -23,6 +33,27 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TrencsanszkyPatrik_Backend.Controllers.BooksController",
+    "Method": "AddBook",
+    "RelativePath": "api/Books/feladat13",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newBook",
+        "Type": "TrencsanszkyPatrik_Backend.Models.Dtos.CreateBookDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "uid",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {

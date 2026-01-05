@@ -14,5 +14,15 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TrencsanszkyPatrik_Backend.Controllers.BooksController",
+    "Method": "GetAllBooks",
+    "RelativePath": "api/Books/feladat10",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

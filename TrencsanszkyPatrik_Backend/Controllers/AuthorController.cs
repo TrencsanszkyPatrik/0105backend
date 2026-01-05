@@ -51,7 +51,5 @@ namespace TrencsanszkyPatrik_Backend.Controllers
         }
 
 
-
-
     }
 }

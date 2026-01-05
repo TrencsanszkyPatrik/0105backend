@@ -26,6 +26,18 @@
           }
         }
       }
+    },
+    "/api/Books/feladat10": {
+      "get": {
+        "tags": [
+          "Books"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": { }

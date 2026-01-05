@@ -1,4 +1,6 @@
 
+using System.Text.Json.Serialization;
+
 namespace TrencsanszkyPatrik_Backend
 {
     public class Program
@@ -8,6 +10,9 @@ namespace TrencsanszkyPatrik_Backend
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+
+            builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

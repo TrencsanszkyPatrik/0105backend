@@ -24,5 +24,15 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TrencsanszkyPatrik_Backend.Controllers.CategoriesController",
+    "Method": "GetCategoriesWithBooks",
+    "RelativePath": "api/Categories/feladat11",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
   }
 ]

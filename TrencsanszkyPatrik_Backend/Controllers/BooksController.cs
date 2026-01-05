@@ -30,7 +30,7 @@ namespace TrencsanszkyPatrik_Backend.Controllers
                     CategoryId = b.CategoryId
                 })
                 .ToListAsync();
-
+            
             if (books == null)
             {
                 return StatusCode(400, "Unable to connect to database");
